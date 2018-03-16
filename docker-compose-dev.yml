@@ -1,0 +1,14 @@
+version: '3'
+services:
+ ldap:
+    build: ./knox
+    image: risdenk/knox_nifi_testing:knox
+
+ knox:
+    build: ./knox
+    image: risdenk/knox_nifi_testing:knox
+
+ nifi:
+    build: ./nifi
+    image: risdenk/knox_nifi_testing:nifi
+
