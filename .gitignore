@@ -1,1 +1,4 @@
 *.tar.gz
+nifi-toolkit-*
+certs/*/nifi.properties
+

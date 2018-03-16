@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tenants>
+    <groups/>
+    <users>
+        <user identifier="59486998-e3ac-3150-a4bc-c00e5a9959ba" identity="CN=nifi, OU=NIFI"/>
+        <user identifier="31ad28e8-0162-1000-7bb0-94d8f75e3cf9" identity="CN=knox, OU=NIFI"/>
+        <!-- Users from Apache Knox Demo LDAP server -->
+        <user identifier="31ad3515-0162-1000-bd40-fdbbacda4bcb" identity="admin"/>
+        <user identifier="90e0a4cb-c4b5-408b-bb8f-d7778d2fa674" identity="guest"/>
+        <user identifier="70783e59-d8a9-4003-ae08-0894a51338bb" identity="sam"/>
+        <user identifier="e59c979c-a5a9-4be9-86e2-415345450f00" identity="tom"/>
+    </users>
+</tenants>

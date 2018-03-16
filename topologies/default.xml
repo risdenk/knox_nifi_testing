@@ -80,7 +80,8 @@
     </gateway>
 
     <service>
-        <role>SOLR</role>
-        <url>http://solr.example.com:8983/solr</url>
+        <role>NIFI</role>
+        <url>https://nifi:9091/</url>
+        <param name="useTwoWaySsl" value="true" />
     </service>
 </topology>

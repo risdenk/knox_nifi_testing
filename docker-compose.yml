@@ -10,24 +10,26 @@ services:
     - "8443:8443"
     command: /gateway.sh
     volumes:
-    - ./topologies:/knox/conf/topologies
+    - ./topologies:/knox/conf/topologies:ro
+    - ./certs:/certs:ro
     depends_on:
     - ldap
 
   nifi:
     image: risdenk/knox_nifi_testing:nifi
-    ports:
-    - "9091:9091"
     environment:
-    - NIFI_WEB_HTTPS_PORT=9091
     - AUTH=tls
-    - KEYSTORE_PATH=/certs/keystore.jks
-    - KEYSTORE_PASSWORD=nifi
+    - NIFI_WEB_HTTPS_HOST=nifi
+    - NIFI_WEB_HTTPS_PORT=9091
+    - KEYSTORE_PATH=/certs/nifi/keystore.jks
+    - KEYSTORE_PASSWORD=keystore
     - KEYSTORE_TYPE=JKS
-    - TRUSTSTORE_PATH=/certs/truststore.jks
-    - TRUSTSTORE_PASSWORD=password
+    - TRUSTSTORE_PATH=/certs/nifi/truststore.jks
+    - TRUSTSTORE_PASSWORD=truststore
     - TRUSTSTORE_TYPE=JKS
-    - INITIAL_ADMIN_IDENTITY='CN=Random User, O=Apache, OU=NiFi, C=US'
+    - INITIAL_ADMIN_IDENTITY=CN=nifi, OU=NIFI
+    volumes:
+    - ./certs:/certs:ro
     depends_on:
     - knox
 
